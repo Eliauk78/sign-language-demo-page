@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>手语识别项目展示页</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <p class="tag">个人展示页面</p>
+      <h1>手语识别与线性人生成项目</h1>
+      <p class="lead">这是我的项目展示页面，包含个人介绍、Demo 视频和技术实现思路。</p>
+    </header>
+
+    <section class="card">
+      <h2>个人介绍</h2>
+      <p>我是一名正在学习计算机视觉与多模态交互的开发者，本项目重点完成了手语视频中的关键点识别与线性人可视化。</p>
+      <p>项目目标是把“识别结果”变成“可展示、可沟通”的动画内容，提升结果可读性与演示效果。</p>
+    </section>
+
+    <section class="card">
+      <h2>Demo 演示视频</h2>
+
+      <p class="hint">视频 1：原始输入样例</p>
+      <video class="demo-video" controls preload="metadata">
+        <source src="./videos/demo_raw.mp4" type="video/mp4" />
+        你的浏览器不支持 video 标签。
+      </video>
+
+      <p class="hint">视频 2：5678... 线性人结果</p>
+      <video class="demo-video" controls preload="metadata" poster="./videos/demo_5678_stickman_h264.jpg">
+        <source src="./videos/demo_5678_stickman_h264.mp4" type="video/mp4" />
+        你的浏览器不支持 video 标签。
+      </video>
+
+      <p class="hint">视频 3：36786... 线性人结果</p>
+      <video class="demo-video" controls preload="metadata" poster="./videos/demo_36786_stickman_h264.jpg">
+        <source src="./videos/demo_36786_stickman_h264.mp4" type="video/mp4" />
+        你的浏览器不支持 video 标签。
+      </video>
+
+      <p class="hint">视频 4：dc627b... 线性人结果</p>
+      <video class="demo-video" controls preload="metadata" poster="./videos/demo_dc627b_stickman_h264.jpg">
+        <source src="./videos/demo_dc627b_stickman_h264.mp4" type="video/mp4" />
+        你的浏览器不支持 video 标签。
+      </video>
+
+      <p class="hint">视频 5：104e... 线性人结果</p>
+      <video class="demo-video" controls preload="metadata" poster="./videos/demo_104e_stickman_h264.jpg">
+        <source src="./videos/demo_104e_stickman_h264.mp4" type="video/mp4" />
+        你的浏览器不支持 video 标签。
+      </video>
+    </section>
+
+    <section class="card">
+      <h2>技术方案与实现思路</h2>
+      <ol>
+        <li>使用 MediaPipe 对视频逐帧识别人脸、手部与姿态关键点。</li>
+        <li>将关键点映射到统一骨骼命名并导出 JSON。</li>
+        <li>根据骨骼连接关系渲染线性人动画视频。</li>
+        <li>通过兜底检测与后处理提升稳定性。</li>
+      </ol>
+      <p>主要脚本：<code>optimized_recognizer.py</code>、<code>stickman_playback.py</code>。</p>
+    </section>
+  </main>
+</body>
+</html>
